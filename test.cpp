@@ -45,6 +45,7 @@ const char* user_path = doc_path_u.c_str();
 		cout << "Could not open file user.txt !" << '\n';
 		return 0;
 	}
+chmod (user_path,  S_IRWXU);
 user_file.close();
 
 string doc_path_m = path_u + "/message.txt";
@@ -87,7 +88,7 @@ const char* mes_path = doc_path_m.c_str();
 		cout << "Could not open file message.txt !" << '\n';
 		return 0;
 	}
-	chmod (user_path,  S_IRWXU);
+	
 	chmod (mes_path,  S_IRWXU);	
 	message_file.close();
 	return 0;
