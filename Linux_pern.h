@@ -8,7 +8,7 @@ class User {
 	string _pass;
 public:
 	User(string name, string login, string pass) :_name(name), _login(login), _pass(pass) {}
-
+	User(){ _name = _login = _pass = ""; } 
 	friend fstream& operator >>(fstream& is, User& obj);
 	friend ostream& operator <<(ostream& os, const User& obj);
 };
@@ -36,6 +36,7 @@ class Message {
 	string _text;
 public:	
 	Message (string text, string sender, string receiver) :_text(text), _sender(sender), _receiver(receiver) {}
+	Message() { _sender = _receiver = _text = ""; }
 	friend fstream& operator >>(fstream& is, Message& obj);		
 	friend ostream& operator <<(ostream& os, const Message& obj);	
 };
